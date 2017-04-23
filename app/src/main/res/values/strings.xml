@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Robotroller</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string-array name="values_array">
+        <item>Forward</item>
+        <item>Stop</item>
+        <item>Reverse</item>
+    </string-array>
+
+</resources>

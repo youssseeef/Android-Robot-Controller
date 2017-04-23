@@ -1,0 +1,159 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mstb="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    tools:context="ml.joesalama.robotroller.robotroller.Robotroller_main">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/togglefwr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <org.honorato.multistatetogglebutton.MultiStateToggleButton
+                android:id="@+id/mstb_multi_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/button_primary_color"
+                mstb:mstbColorNotPressedBackground="@color/black_overlay"
+                mstb:mstbColorNotPressedText="@android:color/holo_blue_dark"
+                mstb:mstbColorPressedBackground="@color/colorPrimary"
+                mstb:mstbColorPressedText="@android:color/holo_blue_dark"
+                mstb:mstbPrimaryColor="@android:color/black"
+
+                mstb:mstbSecondaryColor="@color/blue"
+                mstb:values="@array/values_array" />
+
+            <ToggleButton
+                android:id="@+id/park_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekBar2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp"
+                android:background="@color/blue"
+                android:text="Park"
+                android:textOff="Park OFF"
+                android:textOn="Park On"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekBar2"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="62dp"
+                android:layout_toEndOf="@+id/statusTextView"
+                android:layout_toRightOf="@+id/statusTextView"
+                android:background="@color/blue"
+                android:text="Nitro"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textOff="Nitro OFF"
+                android:textOn="Nitro ON"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/accelerometer_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toggleButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="81dp"
+                android:text="Position left-right indicator"
+                android:textColor="@color/blue" />
+
+            <Button
+                android:id="@+id/restart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Restart"
+                android:layout_below="@+id/statusTextView"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:ems="10"
+                android:inputType="none"
+                android:text="t"
+                android:textColor="@color/blue"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/accelerometer_textview"
+                android:layout_alignEnd="@+id/accelerometer_textview" />
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/messageTextView"
+                android:layout_alignBottom="@+id/messageTextView"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/messageTextView"
+                android:layout_toRightOf="@+id/messageTextView"
+                android:text="Send" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/mstb_multi_id"
+                android:layout_marginEnd="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_marginTop="16dp"
+                android:hapticFeedbackEnabled="true"
+                android:layerType="none"
+                android:max="4"
+                android:pointerIcon="hand"
+                android:progress="0"
+                android:progressBackgroundTint="@color/blue"
+                android:progressTint="@color/colorPrimaryDark"
+                android:tickMark="@color/blue"
+                android:tickMarkTint="@drawable/button_pressed"
+                tools:style="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/accelerometer_textview"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="status "
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Manual Input"
+                android:textColor="@color/blue"
+                android:layout_above="@+id/sendButton"
+                android:layout_alignLeft="@+id/messageTextView"
+                android:layout_alignStart="@+id/messageTextView" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</FrameLayout>
